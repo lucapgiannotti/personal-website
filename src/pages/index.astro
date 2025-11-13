@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 ---
 
 <BaseLayout title="Luca Giannotti - CS Student" description="Personal portfolio showcasing web development projects and skills">
@@ -12,10 +13,5 @@ import Contact from '../components/Contact';
 	<Hero client:only="react" />
 	<Projects client:load />
 	<Contact client:load />
-	
-	<footer style="background: #333; color: white; text-align: center; padding: 2rem;">
-		<p style="margin: 0;">
-			© {new Date().getFullYear()} Luca Giannotti. Built with Astro & React.
-		</p>
-	</footer>
+	<Footer client:load />
 </BaseLayout>
