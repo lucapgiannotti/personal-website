@@ -1,12 +1,15 @@
-import { useState } from 'react';
 import Magnet from './Magnet';
 import ShinyText from './ShinyText';
-import SpotlightCard from './SpotlightCard';
 
 interface SocialLink {
   name: string;
   url: string;
   icon: string;
+}
+
+interface TechCategory {
+  title: string;
+  items: string[];
 }
 
 const socials: SocialLink[] = [
@@ -15,19 +18,32 @@ const socials: SocialLink[] = [
   { name: 'Email', url: 'mailto:hello@lucagiannotti.com', icon: '✉️' },
 ];
 
-export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+const techCategories: TechCategory[] = [
+  {
+    title: 'Languages',
+    items: ['Python', 'TypeScript', 'Java', 'C++'],
+  },
+  {
+    title: 'Frameworks',
+    items: ['React', 'Astro', 'FastAPI', 'Node.js'],
+  },
+  {
+    title: 'Tools',
+    items: ['Docker', 'Git', 'Nginx', 'PostgreSQL'],
+  },
+  {
+    title: 'Interests',
+    items: ['ML Research', 'Distributed Systems', 'Web Performance'],
+  },
+];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Message Not Sent (Server Issue). Please contact me directly at hello@lucagiannotti.com');
-  };
+export default function Contact() {
 
   return (
     <section 
       id="contact"
       style={{
-        padding: '5rem 2rem',
+        padding: '5rem 0',
         maxWidth: '100%',
         margin: '0',
         background: '#0a0a0a',
@@ -37,7 +53,7 @@ export default function Contact() {
         justifyContent: 'center'
       }}
     >
-      <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '0 2rem' }}>
         <h2 style={{ 
           fontSize: 'clamp(2rem, 5vw, 3rem)', 
           textAlign: 'center', 
@@ -49,9 +65,10 @@ export default function Contact() {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '3rem',
-        alignItems: 'start'
+        gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+        gap: '4rem',
+        alignItems: 'start',
+        maxWidth: '100%'
       }}>
         {/* Contact Info */}
         <div>
@@ -100,133 +117,64 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Contact Form */}
-        <SpotlightCard spotlightColor="rgba(102, 126, 234, 0.25)">
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div>
-              <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#f8f9fa' }}>
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-                style={{
-                  width: '100%',
-                  padding: '0.75rem 1rem',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(102, 126, 234, 0.2)',
-                  borderRadius: '8px',
-                  fontSize: '1rem',
-                  color: '#f8f9fa',
-                  transition: 'all 0.3s ease'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = 'rgba(102, 126, 234, 0.6)';
-                  e.target.style.background = 'rgba(255, 255, 255, 0.08)';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = 'rgba(102, 126, 234, 0.2)';
-                  e.target.style.background = 'rgba(255, 255, 255, 0.05)';
-                }}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#f8f9fa' }}>
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                style={{
-                  width: '100%',
-                  padding: '0.75rem 1rem',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(102, 126, 234, 0.2)',
-                  borderRadius: '8px',
-                  fontSize: '1rem',
-                  color: '#f8f9fa',
-                  transition: 'all 0.3s ease'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = 'rgba(102, 126, 234, 0.6)';
-                  e.target.style.background = 'rgba(255, 255, 255, 0.08)';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = 'rgba(102, 126, 234, 0.2)';
-                  e.target.style.background = 'rgba(255, 255, 255, 0.05)';
-                }}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: '#f8f9fa' }}>
-                Message
-              </label>
-              <textarea
-                id="message"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
-                rows={5}
-                style={{
-                  width: '100%',
-                  padding: '0.75rem 1rem',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(102, 126, 234, 0.2)',
-                  borderRadius: '8px',
-                  fontSize: '1rem',
-                  color: '#f8f9fa',
-                  resize: 'vertical',
-                  transition: 'all 0.3s ease',
-                  fontFamily: 'inherit'
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = 'rgba(102, 126, 234, 0.6)';
-                  e.target.style.background = 'rgba(255, 255, 255, 0.08)';
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = 'rgba(102, 126, 234, 0.2)';
-                  e.target.style.background = 'rgba(255, 255, 255, 0.05)';
-                }}
-              />
-            </div>
-
-            <Magnet magnetStrength={4} padding={30}>
-              <button
-                type="submit"
-                style={{
-                  width: '100%',
-                  padding: '1rem 2rem',
-                  background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%)',
-                  border: '1px solid rgba(102, 126, 234, 0.4)',
-                  color: 'white',
-                  borderRadius: '8px',
+        {/* Tech Stack
+        <div>
+          <h3 style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#f8f9fa' }}>
+            Tech Stack
+          </h3>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.5rem',
+          }}>
+            {techCategories.map((category) => (
+              <div key={category.title}>
+                <h4 style={{ 
+                  fontSize: '1rem', 
                   fontWeight: '600',
-                  fontSize: '1rem',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 1) 0%, rgba(118, 75, 162, 1) 100%)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(102, 126, 234, 0.5)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
-                Send Message
-              </button>
-            </Magnet>
-          </form>
-        </SpotlightCard>
+                  color: '#8da4f5',
+                  marginBottom: '0.75rem',
+                  letterSpacing: '0.05em'
+                }}>
+                  {category.title}
+                </h4>
+                <div style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '0.5rem',
+                }}>
+                  {category.items.map((item) => (
+                    <span
+                      key={item}
+                      style={{
+                        padding: '0.5rem 1rem',
+                        background: 'rgba(102, 126, 234, 0.15)',
+                        border: '1px solid rgba(102, 126, 234, 0.3)',
+                        borderRadius: '6px',
+                        color: '#f8f9fa',
+                        fontSize: '0.9rem',
+                        fontWeight: '500',
+                        transition: 'all 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'rgba(102, 126, 234, 0.25)';
+                        e.currentTarget.style.borderColor = 'rgba(102, 126, 234, 0.5)';
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'rgba(102, 126, 234, 0.15)';
+                        e.currentTarget.style.borderColor = 'rgba(102, 126, 234, 0.3)';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                      }}
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div> 
+        </div> */}
       </div>
       </div>
     </section>
