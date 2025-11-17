@@ -3,9 +3,9 @@ import DecryptedText from './DecryptedText';
 
 const roles = [
   'B.S. Computer Science Student',
-  'Back-End Developer',
-  'Machine Learning Enthusiast',
-  'Problem Solver',
+  'Backend & Data Systems',
+  'ML-Focused CS Student',
+  'Systems & Infrastructure '
 ];
 
 export default function RoleRotator() {
