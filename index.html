@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luca Giannotti | CS Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M 2 12 L 6 2 L 12 10 L 20 10 L 26 2 L 30 12 L 16 30 Z' fill='%23db9130'/><path d='M 2 12 L 16 30 L 16 18 Z' fill='%23ede1ce'/><path d='M 30 12 L 16 30 L 16 18 Z' fill='%23fff8f2'/><circle cx='16' cy='30' r='2.5' fill='%232b1700'/><circle cx='10' cy='16' r='1.5' fill='%232b1700'/><circle cx='22' cy='16' r='1.5' fill='%232b1700'/></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-container": "#013d4a", "on-error": "#ffffff", "on-background": "#201b0f", "error": "#ba1a1a", "on-surface": "#201b0f", "on-tertiary-fixed-variant": "#1a4d5a", "inverse-primary": "#ffb866", "on-secondary-container": "#783603", "on-secondary-fixed-variant": "#753401", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#ffb68c", "on-tertiary-fixed": "#001f27", "inverse-surface": "#363023", "surface-variant": "#ede1ce", "on-primary-fixed": "#2b1700", "surface-container-lowest": "#ffffff", "surface-container": "#f8ecd9", "on-secondary-fixed": "#321200", "inverse-on-surface": "#fbefdc", "primary-fixed-dim": "#ffb866", "on-primary-fixed-variant": "#673d00", "surface": "#fff8f2", "on-primary-container": "#513000", "surface-tint": "#875200", "surface-container-low": "#fef2df", "tertiary-fixed": "#baeafa", "surface-container-highest": "#ede1ce", "outline": "#867463", "surface-bright": "#fff8f2", "on-error-container": "#93000a", "tertiary-fixed-dim": "#9ecedd", "tertiary-container": "#79a8b7", "secondary-container": "#ffa26a", "on-primary": "#ffffff", "secondary": "#934b19", "on-surface-variant": "#534435", "error-container": "#ffdad6", "secondary-fixed": "#ffdbc9", "primary-fixed": "#ffddba", "background": "#fff8f2", "surface-container-high": "#f3e7d4", "surface-dim": "#e4d9c6", "on-secondary": "#ffffff", "tertiary": "#356572", "primary-container": "#db9130", "outline-variant": "#d9c3af", "primary": "#875200" }, fontFamily: { "headline": ["Space Grotesk"], "body": ["Newsreader"], "label": ["Work Sans"] }, borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"} } } }
+</script>
+</head>
+<body class="bg-[#fef2df] text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container h-screen overflow-hidden flex items-center justify-center p-2 md:p-3 custom-scrollbar scrollbar-surface">
+<div class="w-full h-full max-w-6xl retro-border p-1 md:p-2 flex flex-col">
+<div class="bg-surface p-1 border border-outline-variant flex flex-col">
+
+<div class="flex-none flex justify-between items-center px-3 py-1 bg-primary text-on-primary font-label text-[10px] mb-1">
+    <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[12px]">schedule</span>
+        <span id="clock-display">Loading...</span>
+    </div>
+    <div class="flex gap-2">
+        <button class="window-control-btn">-</button>
+        <button class="window-control-btn">□</button>
+        <button class="window-control-btn">×</button>
+    </div>
+</div>
+
+<header class="flex-none marquee-bg h-28 md:h-32 flex flex-col items-center justify-center border border-primary mb-1 relative overflow-hidden">
+    <h1 class="font-headline text-3xl md:text-4xl font-bold text-primary tracking-tighter drop-shadow-sm uppercase">Luca Giannotti</h1>
+    <div class="mt-1 px-4 py-0.5 bg-white/50 border-y border-primary/20 text-[10px] md:text-xs italic text-on-surface-variant font-label">
+        Computer Science @ Texas A&M University
+    </div>
+</header>
+
+<div class="flex-none status-banner mb-2">
+    <div class="status-banner__label">STATUS:</div>
+    <div class="status-banner__text">
+        Currently seeking <strong>software engineering internship opportunities</strong> for <strong>Summer 2027</strong>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+  
+<div class="md:col-span-3 relative min-h-[360px] md:h-[52vh] neocities-window bg-surface-container-low overflow-hidden">
+  <iframe name="content-frame" src="home.html" class="absolute inset-0 w-full h-full border-none bg-transparent"></iframe>
+</div>
+
+<aside class="flex flex-col gap-4">
+    <div class="flex-none space-y-1">
+        <div class="flex items-center gap-2 px-1 py-0.5 font-headline font-bold italic text-secondary text-xs">
+            <span class="material-symbols-outlined text-xs">folder_open</span> directory
+        </div>
+
+        <nav id="nav-menu" class="neocities-window sidebar-gradient divide-y divide-outline-variant font-label text-[10px] uppercase font-bold">
+            <a class="nav-link is-active" href="home.html" target="content-frame">
+                <span class="material-symbols-outlined text-xs">person</span> readme.md
+            </a>
+            <a class="nav-link" href="projects.html" target="content-frame">
+                <span class="material-symbols-outlined text-xs">code</span> projects
+            </a>
+            <a class="nav-link" href="experience.html" target="content-frame">
+                <span class="material-symbols-outlined text-xs">work</span> experience
+            </a>
+            <!-- <a class="nav-link" href="article.html" target="content-frame">
+                <span class="material-symbols-outlined text-xs">edit_document</span> writing & research
+            </a> -->
+            <a class="nav-link" href="public/resume.pdf" target="_blank">
+                <span class="material-symbols-outlined text-xs">description</span> resume (pdf)
+            </a>
+        </nav>
+    </div>
+
+    <div class="flex-none bg-surface-container-highest p-2 text-center border-dashed border-2 border-primary-container mt-auto">
+        <span class="font-label text-[9px] uppercase tracking-widest text-secondary font-bold block mb-2">Connect</span>
+        <div class="flex justify-center gap-4">
+            <a href="mailto:lucapgiannotti@tamu.edu" class="social-link" title="Email">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                    <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.236-7.385 4.616a1.25 1.25 0 0 1-1.23 0L4 8.236V6h16v2.236Zm0 9.764H4V10.5l6.29 3.932a3.25 3.25 0 0 0 3.42 0L20 10.5V18Z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/lucagiannotti" target="_blank" class="social-link" title="GitHub">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                    <path d="M12 .5C5.648.5.5 5.678.5 12.074c0 5.117 3.292 9.455 7.86 10.983.574.107.785-.252.785-.562v-2.092c-3.197.708-3.871-1.359-3.871-1.359-.523-1.355-1.278-1.716-1.278-1.716-1.045-.73.08-.715.08-.715 1.155.082 1.763 1.203 1.763 1.203 1.027 1.78 2.694 1.266 3.35.968.104-.756.402-1.266.732-1.556-2.555-.296-5.239-1.293-5.239-5.753 0-1.271.447-2.31 1.183-3.124-.12-.295-.513-1.48.113-3.084 0 0 .963-.312 3.154 1.193a10.73 10.73 0 0 1 2.872-.39c.973.005 1.953.134 2.872.39 2.19-1.505 3.152-1.193 3.152-1.193.628 1.605.234 2.79.114 3.084.736.814 1.182 1.853 1.182 3.124 0 4.472-2.689 5.454-5.252 5.744.413.359.782 1.067.782 2.152v3.188c0 .313.209.674.794.56 4.561-1.533 7.85-5.867 7.85-10.978C23.5 5.678 18.352.5 12 .5Z"/>
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/lucagiannotti" target="_blank" class="social-link" title="LinkedIn">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                    <path d="M4.98 3.5A2.48 2.48 0 1 1 2.5 5.98 2.48 2.48 0 0 1 4.98 3.5ZM3 8.75h3.96V21H3V8.75Zm7.22 0h3.8v1.67h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-3.96v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94V21h-3.94V8.75Z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</aside>
+</div>
+
+<footer class="flex-none mt-4 border-t border-primary-container pt-1.5 pb-0.5 text-center space-y-1">
+    <div class="flex items-center justify-center gap-2 font-label text-[9px] uppercase tracking-wider font-bold text-secondary">
+        <span>Designed & Built by</span>
+        <span class="text-primary italic">Luca Giannotti</span>
+    </div>
+    <p class="text-[8px] font-label uppercase opacity-60">© 2026. All rights reserved.</p>
+</footer>
+
+</div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Clock Logic
+    const clockDisplay = document.getElementById('clock-display');
+    function updateClock() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('en-US', { hour12: true }); 
+      clockDisplay.textContent = timeString;
+    }
+    updateClock(); 
+    setInterval(updateClock, 1000); 
+
+    // Navigation Active State Logic
+    const navLinks = document.querySelectorAll('#nav-menu .nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if(this.target === "content-frame") {
+                        navLinks.forEach(l => l.classList.remove('is-active'));
+                        this.classList.add('is-active');
+        }
+      });
+    });
+
+  });
+</script>
+</body></html>
