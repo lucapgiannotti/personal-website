@@ -1,70 +1,176 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="light" lang="en">
-<head>
-<meta charset="utf-8"/>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M 2 12 L 6 2 L 12 10 L 20 10 L 26 2 L 30 12 L 16 30 Z' fill='%23db9130'/><path d='M 2 12 L 16 30 L 16 18 Z' fill='%23ede1ce'/><path d='M 30 12 L 16 30 L 16 18 Z' fill='%23fff8f2'/><circle cx='16' cy='30' r='2.5' fill='%232b1700'/><circle cx='10' cy='16' r='1.5' fill='%232b1700'/><circle cx='22' cy='16' r='1.5' fill='%232b1700'/></svg>">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="styles.css" rel="stylesheet"/>
-<script id="tailwind-config">
-    tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-container": "#013d4a", "on-error": "#ffffff", "on-background": "#201b0f", "error": "#ba1a1a", "on-surface": "#201b0f", "on-tertiary-fixed-variant": "#1a4d5a", "inverse-primary": "#ffb866", "on-secondary-container": "#783603", "on-secondary-fixed-variant": "#753401", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#ffb68c", "on-tertiary-fixed": "#001f27", "inverse-surface": "#363023", "surface-variant": "#ede1ce", "on-primary-fixed": "#2b1700", "surface-container-lowest": "#ffffff", "surface-container": "#f8ecd9", "on-secondary-fixed": "#321200", "inverse-on-surface": "#fbefdc", "primary-fixed-dim": "#ffb866", "on-primary-fixed-variant": "#673d00", "surface": "#fff8f2", "on-primary-container": "#513000", "surface-tint": "#875200", "surface-container-low": "#fef2df", "tertiary-fixed": "#baeafa", "surface-container-highest": "#ede1ce", "outline": "#867463", "surface-bright": "#fff8f2", "on-error-container": "#93000a", "tertiary-fixed-dim": "#9ecedd", "tertiary-container": "#79a8b7", "secondary-container": "#ffa26a", "on-primary": "#ffffff", "secondary": "#934b19", "on-surface-variant": "#534435", "error-container": "#ffdad6", "secondary-fixed": "#ffdbc9", "primary-fixed": "#ffddba", "background": "#fff8f2", "surface-container-high": "#f3e7d4", "surface-dim": "#e4d9c6", "on-secondary": "#ffffff", "tertiary": "#356572", "primary-container": "#db9130", "outline-variant": "#d9c3af", "primary": "#875200" }, fontFamily: { "headline": ["Space Grotesk"], "body": ["Newsreader"], "label": ["Work Sans"] }, borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"} } } }
-</script>
-</head>
-<body class="content-page selection:bg-secondary-container selection:text-on-secondary-container custom-scrollbar">
-
-<div class="content-shell">
-    
-    <section class="flex-none">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M 2 12 L 6 2 L 12 10 L 20 10 L 26 2 L 30 12 L 16 30 Z' fill='%23db9130'/><path d='M 2 12 L 16 30 L 16 18 Z' fill='%23ede1ce'/><path d='M 30 12 L 16 30 L 16 18 Z' fill='%23fff8f2'/><circle cx='16' cy='30' r='2.5' fill='%232b1700'/><circle cx='10' cy='16' r='1.5' fill='%232b1700'/><circle cx='22' cy='16' r='1.5' fill='%232b1700'/></svg>"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Work+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#013d4a",
+              "on-error": "#ffffff",
+              "on-background": "#201b0f",
+              error: "#ba1a1a",
+              "on-surface": "#201b0f",
+              "on-tertiary-fixed-variant": "#1a4d5a",
+              "inverse-primary": "#ffb866",
+              "on-secondary-container": "#783603",
+              "on-secondary-fixed-variant": "#753401",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed-dim": "#ffb68c",
+              "on-tertiary-fixed": "#001f27",
+              "inverse-surface": "#363023",
+              "surface-variant": "#ede1ce",
+              "on-primary-fixed": "#2b1700",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#f8ecd9",
+              "on-secondary-fixed": "#321200",
+              "inverse-on-surface": "#fbefdc",
+              "primary-fixed-dim": "#ffb866",
+              "on-primary-fixed-variant": "#673d00",
+              surface: "#fff8f2",
+              "on-primary-container": "#513000",
+              "surface-tint": "#875200",
+              "surface-container-low": "#fef2df",
+              "tertiary-fixed": "#baeafa",
+              "surface-container-highest": "#ede1ce",
+              outline: "#867463",
+              "surface-bright": "#fff8f2",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#9ecedd",
+              "tertiary-container": "#79a8b7",
+              "secondary-container": "#ffa26a",
+              "on-primary": "#ffffff",
+              secondary: "#934b19",
+              "on-surface-variant": "#534435",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#ffdbc9",
+              "primary-fixed": "#ffddba",
+              background: "#fff8f2",
+              "surface-container-high": "#f3e7d4",
+              "surface-dim": "#e4d9c6",
+              "on-secondary": "#ffffff",
+              tertiary: "#356572",
+              "primary-container": "#db9130",
+              "outline-variant": "#d9c3af",
+              primary: "#875200",
+            },
+            fontFamily: {
+              headline: ["Space Grotesk"],
+              body: ["Newsreader"],
+              label: ["Work Sans"],
+            },
+            borderRadius: {
+              DEFAULT: "0px",
+              lg: "0px",
+              xl: "0px",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="content-page selection:bg-secondary-container selection:text-on-secondary-container custom-scrollbar"
+  >
+    <div class="content-shell">
+      <section class="flex-none">
         <div class="section-title-row">
-            <span class="material-symbols-outlined icon-filled section-title-icon">work</span>
-            <h2 class="section-title">Experience</h2>
+          <span class="material-symbols-outlined icon-filled section-title-icon"
+            >work</span
+          >
+          <h2 class="section-title">Experience</h2>
         </div>
-        <p class="section-subtitle">Current research and technical work experience.</p>
-    </section>
+        <p class="section-subtitle">
+          Current research and technical work experience.
+        </p>
+      </section>
 
-    <article class="neocities-window info-card">
+      <article class="neocities-window info-card">
         <div class="info-card-tag info-card-tag-current">
-            June 2026 – August 2026
+          June 2026 – August 2026
         </div>
 
         <div class="info-card-body">
-            <h3 class="info-card-title">Data Analyst Intern</h3>
-            <p class="info-card-meta">Indigenous Pact</p>
-            <!-- <p class="info-card-meta">Olympia, Washington</p> -->
-            <div class="info-card-copy">
-                <ul class="info-card-list">
-                    <!-- <li>Develop data solutions for the Texas A&amp;M Baseball Team to support training optimization and in-game decision making.</li>
-                    <li>Build statistical models and machine learning pipelines to analyze pitch, swing, and performance tracking data.</li>
-                    <li>Design and implement scalable data workflows using Python, SQL, and Google Cloud BigQuery.</li>
-                    <li>Transform raw sensor and game data into actionable insights for coaching and player development staff.</li> -->
-                </ul>
-            </div>
+          <h3 class="info-card-title">Data Analyst Intern</h3>
+          <p class="info-card-meta">Indigenous Pact</p>
+          <!-- <p class="info-card-meta">Olympia, Washington</p> -->
+          <div class="info-card-copy">
+            <ul class="info-card-list">
+              <li>
+                Led a data quality audit of 52 gold-layer tables in a
+                Databricks/Azure lakehouse environment during a large-scale data
+                migration.
+              </li>
+              <li>
+                Validated schema integrity and data reliability using SQL and
+                PySpark, identifying and documenting over 150 technical debt
+                items.
+              </li>
+              <li>
+                Designed and implemented validation workflows to cross-check
+                migrated data against source-of-truth records at scale.
+              </li>
+              <li>
+                Transformed audit findings into Power BI dashboards, giving the
+                team an actionable reporting artifact to track data quality
+                throughout the migration.
+              </li>
+            </ul>
+          </div>
         </div>
-    </article>
+      </article>
 
-    <article class="neocities-window info-card">
+      <article class="neocities-window info-card">
         <div class="info-card-tag info-card-tag-current">
-            December 2025 – Present
+          December 2025 – Present
         </div>
 
         <div class="info-card-body">
-            <h3 class="info-card-title">Aggie Baseball Research Member</h3>
-            <p class="info-card-meta">Texas A&M University Baseball R&amp;D</p>
-            <p class="info-card-meta">College Station, TX</p>
-            <div class="info-card-copy">
-                <ul class="info-card-list">
-                    <li>Develop data solutions for the Texas A&amp;M Baseball Team to support training optimization and in-game decision making.</li>
-                    <li>Build statistical models and machine learning pipelines to analyze pitch, swing, and performance tracking data.</li>
-                    <li>Design and implement scalable data workflows using Python, SQL, and Google Cloud BigQuery.</li>
-                    <li>Transform raw sensor and game data into actionable insights for coaching and player development staff.</li>
-                </ul>
-            </div>
+          <h3 class="info-card-title">Aggie Baseball Research Member</h3>
+          <p class="info-card-meta">Texas A&M University Baseball R&amp;D</p>
+          <p class="info-card-meta">College Station, TX</p>
+          <div class="info-card-copy">
+            <ul class="info-card-list">
+              <li>
+                Develop data solutions for the Texas A&amp;M Baseball Team to
+                support training optimization and in-game decision making.
+              </li>
+              <li>
+                Build statistical models and machine learning pipelines to
+                analyze pitch, swing, and performance tracking data.
+              </li>
+              <li>
+                Design and implement scalable data workflows using Python, SQL,
+                and Google Cloud BigQuery.
+              </li>
+              <li>
+                Transform raw sensor and game data into actionable insights for
+                coaching and player development staff.
+              </li>
+            </ul>
+          </div>
         </div>
-    </article>
-    
-    <div class="h-4 w-full flex-none"></div>
+      </article>
 
-</div>
-</body>
+      <div class="h-4 w-full flex-none"></div>
+    </div>
+  </body>
 </html>
