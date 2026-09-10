@@ -140,17 +140,30 @@
 }
 
 .profile-panel {
-    display: flex;
-    gap: 1rem;
+    display: block;
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.3);
 }
 
+.profile-panel::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.profile-panel > .flex-shrink-0 {
+    width: 8rem;
+    float: left;
+    margin: 0 1rem 0.5rem 0;
+}
+
 .profile-avatar {
-    width: 4rem;
-    height: 4rem;
+    width: 8rem;
+    height: 9rem;
+    width: 100%;
+    flex-shrink: 0;
     border: 4px double #875200;
-    padding: 0.125rem;
+    padding: 0.125rem 0.125rem 0;
     background: #ffffff;
     display: flex;
     align-items: center;
@@ -158,25 +171,35 @@
     color: rgba(135, 82, 0, 0.5);
 }
 
-@media (min-width: 768px) {
-    .profile-avatar {
-        width: 5rem;
-        height: 5rem;
-    }
+.profile-avatar img {
+    display: block;
+    object-position: center top;
 }
 
 .profile-copy {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    min-width: 0;
     font-size: 0.875rem;
     line-height: 1.35;
     color: #201b0f;
 }
 
-@media (min-width: 768px) {
-    .profile-copy {
-        font-size: 1rem;
+.profile-copy p {
+    margin: 0 0 0.5rem;
+}
+
+.profile-copy p:nth-of-type(3) {
+    clear: both;
+}
+
+@media (max-width: 480px) {
+    .profile-panel > .flex-shrink-0 {
+        float: none;
+        margin: 0 auto 0.5rem;
+    }
+
+    .profile-avatar {
+        width: 7rem;
+        height: 8rem;
     }
 }
 
@@ -302,13 +325,13 @@
     width: 100%;
     position: relative;
     z-index: 0;
-    color: #875200;
     font-family: "Work Sans", sans-serif;
     font-size: 0.6rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-align: center;
     text-transform: uppercase;
+    color: #875200;
     transition: color 0.2s ease, opacity 0.2s ease;
 }
 
