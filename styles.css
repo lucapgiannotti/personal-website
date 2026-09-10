@@ -13,9 +13,9 @@
 }
 
 .marquee-bg {
-    background-image: linear-gradient(rgba(255, 248, 242, 0.8), rgba(255, 248, 242, 0.8)), url('https://4.bp.blogspot.com/-C0nxK3S0Kgc/TpCUS_0JROI/AAAAAAAAWdE/tl3jdF62JWE/s1600/the_fantastic_mr_fox_concept_art_chris_appelhans_21.jpg');
+    background-image: linear-gradient(rgba(255, 248, 242, 0.8), rgba(255, 248, 242, 0.8)), url('./public/background.JPEG');
     background-size: cover;
-    background-position: center;
+    background-position: 50% 42%;
 }
 
 .sidebar-gradient {
