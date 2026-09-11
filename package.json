@@ -1,0 +1,10 @@
+{
+  "name": "luca-personal-site",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -c tailwind.config.cjs -i tailwind.css -o public/utilities.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
